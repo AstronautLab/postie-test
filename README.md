@@ -16,8 +16,8 @@ The system needs to:
 9. On the single page screen have an email field to have that image with the total points sent in an email.
 
 # Extra points 
-Make the client facing part a Vue SPA using Vue Router (Vuex for extra extra points)
-Use tailwind css
-Add integration test for the instagram connection
+1. Make the client facing part a Vue SPA using Vue Router (Vuex for extra extra points)
+2. Use tailwind css
+3. Add integration test for the instagram connection
 
 It doesnt matter how good or bad it looks, there will be no judgement on design at all.
