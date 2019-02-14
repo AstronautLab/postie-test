@@ -1,7 +1,7 @@
 # Specification
 
 This repository is a clean laravel 5.7 installation. 
-Clone this repository and submit a PR.
+Fork this repository and submit a PR when complete.
 
 The system needs to:
 
