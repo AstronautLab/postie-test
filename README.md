@@ -1,6 +1,7 @@
 # Specification
 
-This repository is a clean laravel 5.7 installation. The goal here is to submit a Pull Request so we can review the code.
+This repository is a clean laravel 5.7 installation. 
+Clone this repository and submit a PR.
 
 The system needs to:
 
