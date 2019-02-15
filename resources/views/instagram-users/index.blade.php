@@ -18,7 +18,7 @@
       <td><img src="{{$user->profile_pic_url}}" width="50" height="50"></td>
       <td>{{$user->user_name}}</td>
       <td>{{$user->full_name}}</td>
-      <td><a class="btn btn-sm btn-primary" href="#">View Images</a></td>
+      <td><a class="btn btn-sm btn-primary" href="{{route('instagram-users.show', $user->user_name)}}">View Images</a></td>
     </tr>
     @endforeach
   </tbody>

@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'InstagramUsersController@index');
+Route::get('/{userName}', 'InstagramUsersController@show')->name('instagram-users.show');

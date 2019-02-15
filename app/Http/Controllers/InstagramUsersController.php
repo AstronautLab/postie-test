@@ -13,4 +13,15 @@ class InstagramUsersController extends Controller
             'users' => InstagramUser::paginate(10),
         ]);
     }
+
+    public function show($userName)
+    {
+        $user = InstagramUser::where('user_name', $userName)
+        ->with('medias')
+        ->firstOrFail();
+        
+        return view('instagram-users.show', [
+            'user' => $user
+        ]);
+    }
 }
