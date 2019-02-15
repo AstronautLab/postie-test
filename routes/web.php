@@ -13,3 +13,5 @@
 
 Route::get('/', 'InstagramUsersController@index');
 Route::get('/{userName}', 'InstagramUsersController@show')->name('instagram-users.show');
+
+Route::get('/{userName}/{mediaId}','InstagramUserImagesController@show')->name('instagram-user-image.show');

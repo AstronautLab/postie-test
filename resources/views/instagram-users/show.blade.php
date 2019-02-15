@@ -13,8 +13,8 @@
         <div class="card">
         <div class="card-body">
             <h5 class="card-title"></h5>
-            <p class="card-text"></p>
-             <a href="#" target="_blank">
+            <p class="card-text">Likes ({{$media->likes}}) , Comments ({{$media->comments}})</p>
+             <a href="{{route('instagram-user-image.show',[$user->user_name, $media->id])}}">
                 <img widht=200  height=200 src="{{url('storage/'.$media->image)}}">
             </a>
         </div>
