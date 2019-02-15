@@ -12,4 +12,9 @@ class InstagramUser extends Model
         'full_name',
         'profile_pic_url',
     ];
+
+    public function medias()
+    {
+        return $this->hasMany(InstagramUserMedia::class, 'user_id');
+    }
 }
