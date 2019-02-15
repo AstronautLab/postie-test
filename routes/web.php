@@ -16,4 +16,4 @@ Route::get('/{userName}', 'InstagramUsersController@show')->name('instagram-user
 
 Route::get('/{userName}/{mediaId}','InstagramUserImagesController@show')->name('instagram-user-image.show');
 
-Route::post('/{userName}/{mediaId}/send-email-score','SendScoreEmailToInstagramUserController@store')->name('instagram-send-email-score.store');
+Route::post('/{userName}/{mediaId}/send-email-score','SendEmailScoreToInstagramUserController@store')->name('instagram-send-email-score.store');

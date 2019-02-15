@@ -9,7 +9,7 @@ use App\InstagramUser;
 use App\InstagramUserMedia;
 use Illuminate\Support\Facades\Mail;
 
-class SendScoreEmailToInstagramUserController extends Controller
+class SendEmailScoreToInstagramUserController extends Controller
 {
     public function store(SendScoreEmailRequest $request, $userName, $mediaId)
     {
