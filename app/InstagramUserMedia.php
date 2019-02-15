@@ -14,4 +14,9 @@ class InstagramUserMedia extends Model
         'likes',
         'comments',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(InstagramUser::class);
+    }
 }

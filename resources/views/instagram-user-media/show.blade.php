@@ -3,10 +3,12 @@
 
 @section('content')
 
-<form>
+<form method="POST" action={{route('instagram-send-email-score.store',[$media->user->user_name, $media->id])}}>
+  @csrf
+
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
   </div>
 
   <button type="submit" class="btn btn-primary">Send Email With Total Points</button>
