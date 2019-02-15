@@ -10,7 +10,7 @@ class InstagramUsersController extends Controller
     public function index()
     {
         return view('instagram-users.index', [
-            'users' => InstagramUser::paginate(10),
+            'users' => InstagramUser::with('medias')->paginate(10),
         ]);
     }
 

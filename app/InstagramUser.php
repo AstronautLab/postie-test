@@ -17,4 +17,11 @@ class InstagramUser extends Model
     {
         return $this->hasMany(InstagramUserMedia::class, 'user_id');
     }
+
+    public function getScoreAttribute()
+    {
+        return $this->medias->sum(function ($media) {
+            return $media->likes + ($media->comments * 5);
+        });
+    }
 }
