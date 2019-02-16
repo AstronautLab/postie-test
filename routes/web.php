@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'InstagramUsersController@index')->name('instagram-users.index');
+Route::get('/{userName}', 'InstagramUsersController@show')->name('instagram-users.show');
+
+Route::get('/{userName}/{mediaId}','InstagramUserImagesController@show')->name('instagram-user-image.show');
+
+Route::post('/{userName}/{mediaId}/send-email-score','SendEmailScoreToInstagramUserController@store')->name('instagram-send-email-score.store');
