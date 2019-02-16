@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('instagram/auth', 'InstagramController@auth');
+Route::get('/users', 'UserController@index');
+Route::get('/images/{username}', 'ImageController@getByUsername')->where('username', '\D+');
+Route::get('/images/{id}', 'ImageController@get')->where('id', '[0-9]+');
