@@ -1,0 +1,32 @@
+version: '3'
+services:
+  mariadb:
+    image: mariadb
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=postie
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+    ports:
+      - 3306:3306
+
+  php-fpm:
+    build: ./docker/php-fpm
+    ports:
+      - 9000:9000
+    volumes:
+      - ./:/var/www
+      - ./logs:/var/www/var/logs
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - '80:80'
+    links:
+      - php-fpm
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./logs/nginx/:/var/log/nginx
+      - ./public:/var/www/public
+

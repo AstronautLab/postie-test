@@ -1,9 +1,30 @@
-# Specification
+# Postie Test
 
-This repository is a clean laravel 5.7 installation. 
-Fork this repository and submit a PR when complete.
 
-The system needs to:
+##Local Deploy
+
+ - Install Docker
+ - create `.env` file, you can just rename `.env.example` to `.env`
+ - run `docker-composer up -d`
+ - run `docker-compose exec php-fpm sh -c 'composer install'`
+ - run `docker-compose exec php-fpm sh -c 'php artisan migrate'` to populate DB
+ 
+
+
+
+
+##Working with Instagram
+According to the https://www.instagram.com/developer/changelog/
+Only personal media is available now(for access token). To pull data from Instagram you have you to get your access 
+token and pass as param to command:
+ - `docker-compose exec php-fpm sh -c 'php artisan pull:instagram {token}'`
+ 
+##Working with SPA
+ - run `npm install`
+ - run `npm run dev`
+ 
+ Then open `http://localhost` and you will see users and etc.
+
 
 1. Setup a developers sandbox on instagram, add the following user to the sandbox: https://instagram.com/developers (matt_trimma & (astronaut3950)
 2. email matt@astronautlab.co the Credntials for connecting to the api
@@ -17,9 +38,13 @@ The system needs to:
 10. Single page must have the image, link to instagram post, total points
 11. On the single page screen have an email field to have that image with the total points sent in an email.
 
-# Extra points 
-1. Make the client facing part a Vue SPA using Vue Router (Vuex for extra extra points)
-2. Use tailwind css
-3. Add integration test for the instagram connection
+## About Postie Test
 
-It doesnt matter how good or bad it looks, there will be no judgement on design at all.
+As you have noticed in project we have Service layer that is responsible for business logic. If I have more time I 
+would add some kind of Manager/Repository layer that is for working with DB data.
+
+Having such layers allows us to have clear and flexible code. All code can be tested properly and independently.
+
+For API routes Swagger ca be added
+
+Haven't got enough time to write tests and polish everything! So it doesn't look perfect IMHO :)
